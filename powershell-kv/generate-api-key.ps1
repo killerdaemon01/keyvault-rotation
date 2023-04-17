@@ -1,4 +1,4 @@
-function Generate-RandomApiKey {
+function APIKeyGen {
     # Generate a random byte array
     $randomBytes = New-Object byte[](48)
     [Security.Cryptography.RNGCryptoServiceProvider]::Create().GetBytes($randomBytes)
@@ -11,7 +11,7 @@ function Generate-RandomApiKey {
 }
 
 # Call the function to generate a random API key
-$apiKey = Generate-RandomApiKey
+$apiKey = APIKeyGen
 
 # Print the API key
 Write-Output "API keys: $apiKey"
