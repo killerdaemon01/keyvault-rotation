@@ -1,4 +1,4 @@
-function Generate-RandomApiKey {
+function APIKeyGen {
     # Generate a random byte array
     $randomBytes = New-Object byte[](48)
     [Security.Cryptography.RNGCryptoServiceProvider]::Create().GetBytes($randomBytes)
@@ -24,7 +24,7 @@ foreach ($keyVault in $keyVaults) {
         # Print the secret name
         Write-host $keyvault.name
         Write-host $secret.name
-        $apiKey = ConvertTo-SecureString $(Generate-RandomApiKey) -AsPlainText -Force
+        $apiKey = ConvertTo-SecureString $(APIKeyGen) -AsPlainText -Force
         Set-AzKeyVaultSecret -VaultName $keyvault.name -Name $secret.name -SecretValue $apiKey
     }
 }
