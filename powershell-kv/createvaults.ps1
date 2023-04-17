@@ -1,5 +1,5 @@
 # Get the key vaults from the JSON file
-$keyVaults = Get-Content -Raw -Path .\keyvaults.json | ConvertFrom-Json | Select-Object -ExpandProperty key_vaults
+$keyVaults = Get-Content -Raw -Path .\createkeyvaults.json | ConvertFrom-Json | Select-Object -ExpandProperty key_vaults
 
 $rggroup = "my_resource_group"
 $location = "eastus"
