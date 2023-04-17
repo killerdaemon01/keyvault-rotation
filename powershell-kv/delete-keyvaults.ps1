@@ -5,4 +5,5 @@ $keyVaults = Get-Content -Raw -Path .\keyvaults.json | ConvertFrom-Json | Select
 foreach ($keyVault in $keyVaults) {
     # Delete the key vault and its contents
     Remove-AzKeyVault -VaultName $keyVault.name -ResourceGroupName $(Get-AzKeyVault -VaultName $keyVault.name).ResourceGroupName -Force
+
 }
