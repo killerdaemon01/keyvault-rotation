@@ -1,0 +1,16 @@
+{
+    "key_vaults": [
+      {
+        "name": "kv29017-1",
+        "secrets": [
+          {
+            "name": "secret1"
+          },
+          {
+            "name": "secret2"
+          }
+        ]
+      }
+    ]
+  }
+  
