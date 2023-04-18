@@ -12,6 +12,6 @@ foreach ($keyVault in $keyVaults) {
         Write-host $keyvault.name
         Write-host $secret.name
         Get-AzKeyVaultSecret -VaultName $keyVault.name -Name $secret.name -AsPlainText
-        Write-host \n
+        Write-host `n
     }
 }
