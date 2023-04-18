@@ -3,6 +3,7 @@ $keyVaults = Get-Content -Raw -Path .\createkeyvaults.json | ConvertFrom-Json | 
 
 $rggroup = "my_resource_group"
 $location = "eastus"
+$serviceprincipal = "850f2186-cf3d-413f-990c-95e0de63e3a2"
 
 # Loop through each key vault
 foreach ($keyVault in $keyVaults) {
