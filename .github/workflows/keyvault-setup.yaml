@@ -6,7 +6,7 @@ permissions:
       contents: read
 jobs:
   CreateKeyvaults:
-    runs-on: ubuntu-20.04
+    runs-on: windows-latest
     steps:
       - name: 'Checkout code'
         uses: actions/checkout@v2
@@ -17,7 +17,8 @@ jobs:
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
           enable-AzPSSession: true 
-      - name: 'Run Powershell Scripts' 
+      - name: 'Run Powershell Scripts'
+        working-directory: .\powershell-kv\
         run: |
-          .\powershell-kv\createvaults.ps1
+          .\createvaults.ps1
 
