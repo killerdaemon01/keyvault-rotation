@@ -1,11 +1,11 @@
 name: KeyVault Initial Setup
 on:
   workflow_dispatch:
-# permissions:
-#       id-token: write
-#       contents: read
+permissions:
+      id-token: write
+      contents: read
 jobs:
-  Autoticketing:
+  CreateKeyvaults:
     runs-on: ubuntu-20.04
     steps:
       - name: 'AZ CLI Loging'
