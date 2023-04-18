@@ -8,6 +8,7 @@ $location = "eastus"
 foreach ($keyVault in $keyVaults) {
     # Create the key vault
     New-AzKeyVault -VaultName $keyVault.name -ResourceGroupName $rggroup -Location $location
+    Set-AzKeyVaultAccessPolicy -VaultName $keyVault.name -ServicePrincipalName $serviceprincipal -PermissionsToSecrets all
 
     # Loop through each secret in the key vault
     foreach ($secret in $keyVault.secrets) {
