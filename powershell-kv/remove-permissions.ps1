@@ -5,7 +5,7 @@ $userprincipal = "AdminA@bladeztrail007gmail.onmicrosoft.com"
 
 # Loop through each key vault
 foreach ($keyVault in $keyVaults) {
-    # Delete the key vault and its contents
-    Remove-AzKeyVaultAccessPolicy -VaultName $keyVault -UserPrincipalName $userprincipal -PassThru
+    $rgname = (Get-AzKeyVault -VaultName $keyVault.name).ResourceGroupName
+    Remove-AzKeyVaultAccessPolicy -VaultName $keyVault.name -UserPrincipalName $userprincipal -ResourceGroupName $rgname -PassThru
 
 }
